@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+        let str = "+989358175466";
+        let x = 1;
+
+        if( str.length != 13 && str.includes("+98") )
+            x = 0;
+        
+        for(let i=1 ;i < str.length;i++){
+            if( isNaN(+str[i]) )
+                x = 0;
+            
+            if( str[i] === " " )
+                x = 0;
+        }
+        (x)?alert("valid"):alert("invalid");
+
+    </script>
+
+</body>
+</html>

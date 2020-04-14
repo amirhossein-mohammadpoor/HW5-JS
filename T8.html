@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+    let array = [1,2,3,4,5,6,7,8,9];
+
+    shuffleArray(array);
+
+    function shuffleArray(array){
+        let shuffledArray = [];
+        let randomIndex = createUniqueNumbers(array.length);
+
+        for(let value of randomIndex){
+            shuffledArray[value] = array.pop(0);
+        }
+
+        alert(shuffledArray);
+    }
+
+    function createUniqueNumbers(n){
+        let array = [] ;
+        let i = 0;
+
+        array.push( (10 * Math.random())|0 );
+        i++;
+
+        while( i < n ){
+            let x = (10 * Math.random())|0;
+
+            if( array.indexOf(x) == -1 ){
+                array.push(x);
+                i++
+            }
+        }
+
+        return array;
+    }
+
+    </script>
+
+</body>
+</html>

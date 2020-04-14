@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let username = fs.readFileSync("./usernames.txt").toString().split("\r\n");
+        let alph = "abcdefghijklmnopqsrtuvwxyz";
+        let str = "hooks";
+        let category = {};
+        let x;
+        //  پیدا کردن موقعیت شروع هر حرف به ترتیب الفبای انگلیسی
+        for(let i=0;i<alph.length;i++)
+        category[i] = username.indexOf(alph[i]);
+
+        // پیدا کردن تفاوت زمان اجرایی الگوریتم از تابع ایندکس آف
+        let time = Date.now();
+
+        for(let i=0;i<1000;i++){
+        x = username.slice(category[alph.indexOf(str[0])], category[alph.indexOf(str[0]) + 1]);
+        x.indexOf(str);
+        }
+
+        console.log("a: ",Date.now() - time);
+
+        time = Date.now();
+
+        for(let i=0;i<1000;i++){
+        username.indexOf(str);
+        }
+
+        console.log("b: ",Date.now() - time);
+
+    </script>
+
+</body>
+</html>

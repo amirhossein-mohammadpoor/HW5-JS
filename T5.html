@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/png" href="./pic/Koala.jpg" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <script>
+
+    createUniqueNumbers(10);
+
+    function createUniqueNumbers(n=1){
+        let array = [] ;
+        let i = 0;
+
+        array.push( (1000 + 59000 * Math.random())|0 );
+        i++;
+
+        while( i < n ){
+            let x = (1000 + 59000 * Math.random())|0;
+
+            if( array.indexOf(x) == -1 ){
+                array.push(x);
+                i++
+            }
+        }
+
+        alert(array);
+    }
+
+    
+
+    </script>
+
+</body>
+
+</html>

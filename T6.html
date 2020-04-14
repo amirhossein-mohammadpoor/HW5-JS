@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let obj1 = {
+            1:1 ,
+            obj11: {
+                2:2 ,
+                3:3
+            }
+        }
+        let obj2 = {
+            2:2 ,
+            obj21: {
+                3:3 ,
+                4:4
+            }
+        }
+        let obj3 = {
+            3:3 ,
+            obj31: {
+                4:4 ,
+                5:5
+            }
+        }
+
+        mergObj(obj1,obj2,obj3);
+
+        function mergObj(...objs){
+            let totalObj = {};
+
+            for(let value of objs){
+                deepClone(value,totalObj)
+            }
+            console.log(totalObj);
+        }
+
+        function deepClone(obj1,obj2){
+            for( let key in obj1 ){
+                if( typeof obj1[key] === "object" ){
+                    obj2[key] = {};
+                    deepClone(obj1[key],obj2[key]);
+                }
+                else
+                obj2[key] = obj1[key];
+            }
+        }
+
+    </script>
+
+</body>
+</html>

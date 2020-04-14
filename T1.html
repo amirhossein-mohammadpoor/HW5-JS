@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        let str = "mohammadpoor104@gmail.com";
+        let x = 1;
+        
+        str = str.toLowerCase();
+
+        if( str.includes("(") || str.includes(")") && x )
+            x = 0;
+
+        for( let char of str ){
+            let i = 0;
+
+            if( char === "@" ){
+                i++;
+
+                if( i == 2 ){
+                    x = 0;
+                    break;
+                }
+                    
+            }
+        }
+
+        if( str.includes("@") && x){
+            let s = str.split("@")[1];
+
+            switch(s){
+                case "gmail.com":
+                x = 1
+                break;
+
+                case "yahoo.com":
+                    x = 1;
+                    break;
+                
+                case "hotmail.com": 
+                    x = 1;
+                    break;
+                
+                case "outlook.com":
+                    x = 1;
+                    break;
+                
+                case "gmx.com":
+                    x = 1;
+                    break;
+
+                case "zoho.com":
+                    x = 1;
+                    break;
+
+                case "icloud.com":
+                    x = 1;
+                    break;
+
+                case "aol.com":
+                    x = 1;
+                    break;
+
+                case "protonmail.com":
+                    x = 1;
+                    break;
+
+                case "hushmail.com":
+                    x = 1;
+                    break;
+
+                case "lycos.com":
+                    x = 1;
+                    break;
+
+                case "safe-mail.com":
+                    x = 1;
+                    break;
+
+                case "trash.com":
+                    x = 1;
+                    break;
+
+                case "mail.com":
+                    x = 1;
+                    break;
+
+                case "tutanota.com":
+                    x = 1;
+                    break;
+
+                case "fastmail.com":
+                    x = 1;
+                    break;
+
+                default :
+                    x = 0;
+            }
+        }
+        else
+            x = 0;
+
+        if( str.includes(".") && x){
+            let pos = str.indexOf("@") - 1;
+
+            if( str[pos] === "." )
+                x = 0;
+            
+            for(let i=0;i<str.length;i++){
+                if(str[i] === ".")
+                    if( str[i+1] === "." ){
+                        x = 0;
+                        break;
+                    }
+            }
+        }
+
+        (x)?alert("email valid"):alert("email invalid");
+
+    </script>
+
+</body>
+</html>
